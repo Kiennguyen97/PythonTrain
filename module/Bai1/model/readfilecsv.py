@@ -6,6 +6,7 @@ import csv
 import os
 import sys
 import time
+from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import as_completed
 
@@ -44,8 +45,8 @@ class ReadFileCSV:
             if column_name:
                 writer.writerow(column_name)
             for row in data:
-                writer.writerow([row, time.time()])
-                time.sleep(0.001)
+                writer.writerow([row, datetime.now()])
+                # time.sleep(0.00001)
 
 
 
